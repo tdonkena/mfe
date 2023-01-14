@@ -21,14 +21,14 @@ jobs:
       - run: npm run build
 
       - uses: shinyinc/action-aws-cli@v1.2
-      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest --region us-west-2
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html" --region us-west-2
+      - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
         env: 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-west-2
           AWS_EC2_METADATA_DISABLED: true          
-      - run: aws cloufront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/conatiner/latest/index.html" --region us-west-2
+      - run: aws cloufront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/conatiner/latest/index.html"
         env: 
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRETE_ACCESS_KEY }}
