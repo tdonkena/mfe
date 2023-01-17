@@ -148,7 +148,7 @@
             <button class="p-link">
               <span class="name">Jason Dourne</span>
               <span class="email">jason@primevue.com</span>
-            </button>
+            </button> 
           </li>
           <li>
             <button class="p-link">
