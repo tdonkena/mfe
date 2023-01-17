@@ -1,8 +1,8 @@
-import { mount } from 'marketing/MarketingApp';
+import { mount } from 'auth/AuthApp';
 import { useHistory } from 'react-router-dom';
 import React, { useRef, useEffect } from 'react';
 
-export default () => {
+export default ({onSignIn}) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -15,7 +15,8 @@ export default () => {
         // navigate only if path is different
         if(pathname !== nextPathname)
           history.push(nextPathname);
-      },
+      },      
+      onSignIn    
     });
     // listen to child route change event
     history.listen(onParentNavigate);
