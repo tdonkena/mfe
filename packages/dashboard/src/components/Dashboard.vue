@@ -156,7 +156,7 @@
               <span class="email">jane@primevue.com</span>
             </button>
           </li>
-          <li>
+          <li> 
             <button class="p-link">
               <span class="name">Tony Corleone</span>
               <span class="email">tony@primevue.com</span>
